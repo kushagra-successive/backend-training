@@ -1,4 +1,21 @@
-## Description
+## Details
+
+1. I have created a file of index.js where i have taken the input for operands from user and passing it to the functions which is created inside math.js which internally calls the lodash arithmetic function for the calculations,and then the output of the function is stored in the solution.csv file.
+
+## Installation:
+
+1. Clone the repository to your local machine:
+   git clone https://github.com/kushagra-successive/backend-training.git
+2. Install dependencies:
+   npm install lodash
+   npm install readline-sync
+
+Usage:
+Ensure that you have Node.js installed on your system.
+Run the application:
+node index.js
+
+## Assignment1
 
 1. Set up a stable LTS version of Node.js (optional if already set up).
 
