@@ -1,0 +1,17 @@
+{
+  "name": "backend-training",
+  "version": "1.0.0",
+  "description": "1. Create a thorough document, named errors.md, provide a detailed description of all error codes.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
