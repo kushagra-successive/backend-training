@@ -1,5 +1,3 @@
-const Jwt = require("jsonwebtoken");
-
 const middleware1 = (req, res, next) => {
   console.log("Middleware 1");
   next();
