@@ -1,11 +1,7 @@
-const userController = require("./UserControoler");
-
-const customController = require("./customController");
-
-const routeController = require("./routeController");
+const validateControl = require("./validateControl");
+const promise = require("./asyncController");
 
 module.exports = {
-  userController,
-  customController,
-  routeController,
+  validateControl,
+  promise,
 };
