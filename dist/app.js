@@ -1,11 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-const express = require("express");
-const app = express();
 const sum = (a, b) => {
-    return a + b;
+    return "l";
 };
-app.get("/", (req, res) => {
-});
-console.log(sum(2, 3));
+console.log(sum(1, 2));
 // app.listen(3000, () => console.log("listening"));

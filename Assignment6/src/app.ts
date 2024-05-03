@@ -1,13 +1,8 @@
 import { Request, Response } from "express";
 
-const express = require("express");
-const app = express();
-
-const sum=(a:number,b:number)=>{
-  return a+b;
+const sum=(a:number,b:number):string=>{
+  return "l";
 }
-app.get("/", (req: Request, res: Response)=>{
+console.log(sum(1,2));
 
-})
-console.log(sum(2,3));
 // app.listen(3000, () => console.log("listening"));
