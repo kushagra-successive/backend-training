@@ -1,7 +1,7 @@
 "use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const sum = (a, b) => {
-    return "l";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-console.log(sum(1, 2));
-// app.listen(3000, () => console.log("listening"));
+Object.defineProperty(exports, "__esModule", { value: true });
+const server_1 = __importDefault(require("./server"));
+(0, server_1.default)().listen(4001, () => console.log("Listening"));
