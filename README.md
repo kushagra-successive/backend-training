@@ -7,8 +7,8 @@
 1. Clone the repository to your local machine:
    git clone https://github.com/kushagra-successive/backend-training.git
 2. Install dependencies:
-   npm install lodash
-   npm install readline-sync
+   npm i or
+   npm install
 
 Usage:
 Ensure that you have Node.js installed on your system.
