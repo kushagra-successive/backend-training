@@ -1,35 +1,66 @@
-## Description
+## Details
 
-1. Setup Validation middleware
+1. I have created a file of index.js where i have taken the input for operands from user and passing it to the functions which is created inside math.js which internally calls the lodash arithmetic function for the calculations,and then the output of the function is stored in the solution.csv file.
 
-   1. Install joi package using npm - npm install joi
+## Installation:
 
-   2. Include joi in your express file -
+1. Clone the repository to your local machine:
+   git clone https://github.com/kushagra-successive/backend-training.git
+2. Install dependencies:
+   npm i or
+   npm install
 
-      1. const Joi = require('joi');
+Usage:
+Ensure that you have Node.js installed on your system.
+Run the application:
+node index.js
 
-2. Apply joi in your code, sample code as below -
+## Assignment1
 
-   1. // Example validation schema
+1. Set up a stable LTS version of Node.js (optional if already set up).
 
-      const userSchema = Joi.object({
+   1. Here are the steps to install the stable LTS version of Node.js:
 
-      username: Joi.string().alphanum().min(3).max(30).required(),
+   1. Update Package Lists: sudo apt update
 
-      email: Joi.string().email().required(),
+   1. Install Node.js:
 
-      password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
+      1. sudo apt install curl
 
-});
+      2. curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 
-2. Incorporate the validation middleware with the previously developed API.
+   1. After running the setup script, you can install Node.js and npm:
 
-3. Create a thorough document, named validations.md, elucidating the importance of validations in security.
+      1. sudo apt install nodejs
 
-4. Write a middleware function to validate user input for a registration form. Check if the required fields are present and if they meet certain criteria (e.g., password strength, email format).
+   1. Verify Installation
 
-5. Create middleware to validate that specific query parameters in a route are numeric. If a non-numeric value is provided, respond with an appropriate error message.
+      1. node -v
 
-6. Implement middleware to validate the geographic location of the client. If the request is not coming from an expected region, respond with an error.
+      2. npm -v
 
-7. User Build a validation middleware that dynamically fetches validation rules from a configuration file. The rules should be applied based on the route being accessed.
+2. Create a repository (named as backend-training) and generate a README.md file and write all the steps and details in this file.
+
+3. Create a file named 'different-architecture.md' and elucidate the distinctions among various architectural types, outlining their unique characteristics and differences from one another.
+
+4. Generate a file named 'client-server.md' and provide an explanation specifically focusing on the client-server architecture.
+
+5. Set up the nodemon dependency by using cmd - npm install -g nodemon.
+
+6. Create a folder named 'lib.'
+
+7. Create a file named 'math.js' inside the 'lib' folder.
+
+8. Create four methods: add(num1, num2), sub(num1, num2), mult(num1, num2), and div(num1, num2), which perform addition, subtraction, multiplication, and division, respectively in math.js. Utilize the lodash dependency for executing the aforementioned operations. Export all the above methods to make them accessible in any file.
+
+9. In the project's root directory, generate an 'index.js' file to solicit two user inputs via commands. Execute all operations specified in 'lib/math.js' according to the given commands. The structure of your project would look something like this:
+
+10. project-root/
+
+|-- index.js
+
+|-- lib/
+
+| |-- math.js
+
+11. Using the Node.js `fs` module, save the aforementioned solution to a CSV file in the following manner
