@@ -1,39 +1,35 @@
 ## Description
 
-1. Prepare a comprehensive document that explains Express.js and provides an overview of other frameworks. Additionally, elucidate the reasons why frameworks are necessary. Include information on REST APIs and their components and store it in client-server-architecture.md.
+1. Setup Validation middleware
 
-2. Install and set up the latest stable version of Express.
+   1. Install joi package using npm - npm install joi
 
-   1. npm install express
+   2. Include joi in your express file -
 
-3. Setup and configure cookie-parser dependency
+      1. const Joi = require('joi');
 
-4. Install and set up the latest stable version of Postman.
+2. Apply joi in your code, sample code as below -
 
-   1. Open a terminal
+   1. // Example validation schema
 
-   2. Add the postman repository
+      const userSchema = Joi.object({
 
-      1. sudo sh -c 'echo "deb https://dl.pstmn.io/download/latest/linux64" > /etc/apt/sources.list.d/postman.list'
+      username: Joi.string().alphanum().min(3).max(30).required(),
 
-5. Import the Postman GPG Key
+      email: Joi.string().email().required(),
 
-   1. sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 379CE192D401AB61
+      password: Joi.string().pattern(new RegExp('^[a-zA-Z0-9]{3,30}$')).required(),
 
-6. Update the package list
+});
 
-   1. sudo apt-get update
+2. Incorporate the validation middleware with the previously developed API.
 
-7. Install Postman
+3. Create a thorough document, named validations.md, elucidating the importance of validations in security.
 
-   1. sudo apt-get install postman
+4. Write a middleware function to validate user input for a registration form. Check if the required fields are present and if they meet certain criteria (e.g., password strength, email format).
 
-8. Add these details to the README.md file.
+5. Create middleware to validate that specific query parameters in a route are numeric. If a non-numeric value is provided, respond with an appropriate error message.
 
-9. Create a GET API that returns a mock list as a response.
+6. Implement middleware to validate the geographic location of the client. If the request is not coming from an expected region, respond with an error.
 
-   1. FileName -
-
-      1. app.js: This file will contain the main Express application code.
-
-      2. mockData.js: This file will contain your mock data (an array, for instance).
+7. User Build a validation middleware that dynamically fetches validation rules from a configuration file. The rules should be applied based on the route being accessed.
