@@ -1,11 +1,11 @@
 const jwt = require("jsonwebtoken");
-const {secretKey}=require('../utils/helperFunction');
 const createToken = (req, res, next) => {
   const payload = {
     name: "ShreeRam",
     email: "raghven999@gmail.com",
   };
-  req.token = jwt.sign(payload, secretKey);
+  // eslint-disable-next-line no-undef
+  req.token = jwt.sign(payload, process.env.JWT_SECRET);
   next();
 };
 module.exports = createToken;

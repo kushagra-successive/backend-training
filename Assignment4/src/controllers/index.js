@@ -1,4 +1,4 @@
-const userController = require("./UserControoler");
+const userController = require("./UserController");
 
 const customController = require("./customController");
 

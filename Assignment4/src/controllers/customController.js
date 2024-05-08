@@ -1,4 +1,4 @@
-const customController = (req, res) => {
-  res.json({ message: "OKAY" });
+const customController = (req, res, next) => {
+  next();
 };
 module.exports = customController;
