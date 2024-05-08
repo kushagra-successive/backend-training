@@ -1,9 +1,9 @@
 const Country = require("../models/country");
-const countrySeedData = require("../playingCountry");
+const seedCountryData = require("../playingCountry");
 
 const seedDb = async () => {
   await Country.deleteMany({}); //delete previous records
-  await Country.insertMany(seedCountry);
+  await Country.insertMany(seedCountryData);
 };
 
-module.exports=seedDb;
+module.exports = seedDb;
