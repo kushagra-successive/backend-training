@@ -1,7 +1,8 @@
-const document = require("../models/mySchema");
+const user = require("../models/mySchema");
 const validate = async (req, res, next) => {
   try {
-    await document.create(req.body);
+    const newDocument = new user(req.body);
+    await newDocument.save();
     next();
   } catch (error) {
     res.json({ message: error.message });
