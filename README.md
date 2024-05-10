@@ -1,66 +1,101 @@
-## Details
+## Description
 
-1. I have created a file of index.js where i have taken the input for operands from user and passing it to the functions which is created inside math.js which internally calls the lodash arithmetic function for the calculations,and then the output of the function is stored in the solution.csv file.
+1. Prepare documentation on middleware and its usage and store it in middleware.md.
 
-## Installation:
+2. Set up middleware.
 
-1. Clone the repository to your local machine:
-   git clone https://github.com/kushagra-successive/backend-training.git
-2. Install dependencies:
-   npm i or
-   npm install
+   1. Install jsonwebtoken package using npm - npm install jsonwebtoken
 
-Usage:
-Ensure that you have Node.js installed on your system.
-Run the application:
-node index.js
+   2. Define Authentication middleware
 
-## Assignment1
+   3. Use authenticate middleware
 
-1. Set up a stable LTS version of Node.js (optional if already set up).
+3. Establish the project directory structure, including controllers, routes, and utils.
 
-   1. Here are the steps to install the stable LTS version of Node.js:
+- project-root
 
-   1. Update Package Lists: sudo apt update
+  |
 
-   1. Install Node.js:
+  ├── node_modules
 
-      1. sudo apt install curl
+  |
 
-      2. curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+  ├── public
 
-   1. After running the setup script, you can install Node.js and npm:
+  | ├── css
 
-      1. sudo apt install nodejs
+  | ├── js
 
-   1. Verify Installation
+  | └── images
 
-      1. node -v
+  |
 
-      2. npm -v
+  ├── src
 
-2. Create a repository (named as backend-training) and generate a README.md file and write all the steps and details in this file.
+  | ├── controllers
 
-3. Create a file named 'different-architecture.md' and elucidate the distinctions among various architectural types, outlining their unique characteristics and differences from one another.
+  | | ├── UserController.js
 
-4. Generate a file named 'client-server.md' and provide an explanation specifically focusing on the client-server architecture.
+  | | └── OtherController.js
 
-5. Set up the nodemon dependency by using cmd - npm install -g nodemon.
+  | |
 
-6. Create a folder named 'lib.'
+  | ├── routes
 
-7. Create a file named 'math.js' inside the 'lib' folder.
+  | | ├── index.js
 
-8. Create four methods: add(num1, num2), sub(num1, num2), mult(num1, num2), and div(num1, num2), which perform addition, subtraction, multiplication, and division, respectively in math.js. Utilize the lodash dependency for executing the aforementioned operations. Export all the above methods to make them accessible in any file.
+  | | ├── userRoutes.js
 
-9. In the project's root directory, generate an 'index.js' file to solicit two user inputs via commands. Execute all operations specified in 'lib/math.js' according to the given commands. The structure of your project would look something like this:
+  | | └── otherRoutes.js
 
-10. project-root/
+  | |
 
-|-- index.js
+  | ├── utils
 
-|-- lib/
+  | | ├── helperFunctions.js
 
-| |-- math.js
+  | | └── otherUtils.js
 
-11. Using the Node.js `fs` module, save the aforementioned solution to a CSV file in the following manner
+  | |
+
+  | ├── app.js
+
+  | └── server.js
+
+  |
+
+  ├── views
+
+  | ├── index.ejs
+
+  | └── otherView.ejs
+
+  |
+
+  ├── .gitignore
+
+  ├── package.json
+
+  ├── package-lock.json
+
+  └── README.md
+
+4. Develop a data seeding module that generates mock API responses.
+
+5. Create a sample POST API that returns a seeded data as a response.
+
+6. Develop an authentication middleware using a JWT dummy token.
+
+7. Integrate the authentication middleware with the previously created APIs.
+
+8. Adhere to the specified directory structure.
+
+9. Write a custom middleware function that logs the incoming requests' method, URL, and timestamp to the console.
+
+10. Implement an error-handling middleware that captures errors thrown in the route handlers and sends an appropriate error response.
+
+11. Write a series of middleware functions and chain them together to demonstrate how multiple middleware can be applied to a single route.
+
+12. Build middleware that adds a custom header to every response. Allow the header value to be configurable.
+
+13. Develop middleware that limits the number of requests a user can make in a given time frame. Include parameters for setting the limit.
