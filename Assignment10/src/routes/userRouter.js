@@ -1,0 +1,12 @@
+const express = require("express");
+const router = express.Router();
+const signUpController = require("../controllers/signUpControl.js");
+const signUp = require("../middleware/signup.Middleware.js");
+const login = require("../middleware/signinMiddleware.js");
+const loginControl = require("../controllers/signInControl");
+const verify = require("../middleware/verifyMiddleware.js");
+const verifyControl = require("../controllers/verifyControl.js");
+router.post("/signup", signUp, signUpController);
+router.post("/signin", login, loginControl);
+router.post("/access", verify, verifyControl);
+module.exports = router;
