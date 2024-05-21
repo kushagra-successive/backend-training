@@ -1,5 +1,5 @@
 const createError = require("http-errors");
-const promise = async (req, res, next) => {
+const asyncRouteHandler = async (req, res, next) => {
   try {
     await new Promise((resolve, reject) => {
       reject(new Error("Promise Rejected"));
@@ -10,4 +10,4 @@ const promise = async (req, res, next) => {
   }
 };
 
-module.exports = promise;
+module.exports = asyncRouteHandler;

@@ -2,7 +2,7 @@ const express = require("express");
 const { validate } = require("../middleware");
 const {
   validateControl,
-  promise,
+  asyncRouteHandler,
   notFound,
   unAuthorized,
   badRequest,
@@ -15,7 +15,7 @@ router.get("/", notFound);
 router.get("/protected-route", unAuthorized);
 // Bad Request (400): When the server cannot process the request due to invalid syntax.
 router.post("/api/resource", badRequest);
-router.get("/async", promise);
+router.get("/async", asyncRouteHandler);
 router.post("/validate", validate, validateControl);
 
 module.exports = router;

@@ -1,11 +1,11 @@
 const validateControl = require("./validateControl");
-const promise = require("./asyncController");
+const asyncRouteHandler = require("./asyncController");
 const notFound = require("./notFoundController");
 const unAuthorized = require("./unAuthorizedController");
 const badRequest = require("./badRequest");
 module.exports = {
   validateControl,
-  promise,
+  asyncRouteHandler,
   notFound,
   unAuthorized,
   badRequest,
