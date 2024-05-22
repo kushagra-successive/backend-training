@@ -1,101 +1,43 @@
 ## Description
 
-1. Prepare documentation on middleware and its usage and store it in middleware.md.
+1. Create a thorough document, named errors.md, provide a detailed description of all error codes.
 
-2. Set up middleware.
+2. Setup error handling middleware
 
-   1. Install jsonwebtoken package using npm - npm install jsonwebtoken
+   1. Setup middleware using app.use() method
 
-   2. Define Authentication middleware
+      const express = require('express');
 
-   3. Use authenticate middleware
+      const createError = require('http-errors');
 
-3. Establish the project directory structure, including controllers, routes, and utils.
+      const app = express();
 
-- project-root
+   // Other middleware and routes
 
-  |
+   // Error handling middleware
 
-  ├── node_modules
+   app.use((req, res, next) => {
 
-  |
+   next(createError(404, 'Not Found'));
 
-  ├── public
+   });
 
-  | ├── css
+   // Additional error handling middleware (if needed)
 
-  | ├── js
+   // Start server
 
-  | └── images
+   const port = process.env.PORT || 3000;
 
-  |
+   app.listen(port, () => {
 
-  ├── src
+   console.log(`Server is running on port ${port}`);
 
-  | ├── controllers
+});
 
-  | | ├── UserController.js
+3. Incorporate the error handling middleware with the previously developed API.
 
-  | | └── OtherController.js
+4. Create scenarios that generate all possible error codes.
 
-  | |
+5. Create an asynchronous route that intentionally throws an error.Implement error handling for asynchronous errors within the route.Send an appropriate response to the client, indicating the error.
 
-  | ├── routes
-
-  | | ├── index.js
-
-  | | ├── userRoutes.js
-
-  | | └── otherRoutes.js
-
-  | |
-
-  | ├── utils
-
-  | | ├── helperFunctions.js
-
-  | | └── otherUtils.js
-
-  | |
-
-  | ├── app.js
-
-  | └── server.js
-
-  |
-
-  ├── views
-
-  | ├── index.ejs
-
-  | └── otherView.ejs
-
-  |
-
-  ├── .gitignore
-
-  ├── package.json
-
-  ├── package-lock.json
-
-  └── README.md
-
-4. Develop a data seeding module that generates mock API responses.
-
-5. Create a sample POST API that returns a seeded data as a response.
-
-6. Develop an authentication middleware using a JWT dummy token.
-
-7. Integrate the authentication middleware with the previously created APIs.
-
-8. Adhere to the specified directory structure.
-
-9. Write a custom middleware function that logs the incoming requests' method, URL, and timestamp to the console.
-
-10. Implement an error-handling middleware that captures errors thrown in the route handlers and sends an appropriate error response.
-
-11. Write a series of middleware functions and chain them together to demonstrate how multiple middleware can be applied to a single route.
-
-12. Build middleware that adds a custom header to every response. Allow the header value to be configurable.
-
-13. Develop middleware that limits the number of requests a user can make in a given time frame. Include parameters for setting the limit.
+6. Create a route that expects certain parameters in the request. Implement validation checks and throw a validation error if the checks fail. Handle validation errors gracefully and send a JSON response with error details.
