@@ -1,5 +1,5 @@
 import {Request,Response,NextFunction} from "express";
-import {mockList,secretKey} from "../utils/HelperFunction";
+import {mockList} from "../utils/HelperFunction";
 interface shape{
   mock(req: Request, res: Response): void;
   user1(req: Request, res: Response):void;

@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.seededDataMiddleware = void 0;
 const seededDataMiddleware = () => {
     return (req, res, next) => {
-        let data = {
+        const data = {
             name: "John",
             age: 30
         };

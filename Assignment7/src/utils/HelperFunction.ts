@@ -20,4 +20,3 @@ export const mockList:shape[]=[
     description: "Description of Item 3.",
   },
 ]
-export const secretKey="My_Secret";
