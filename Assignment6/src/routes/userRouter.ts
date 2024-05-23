@@ -1,6 +1,6 @@
 import express, { Request, Response, NextFunction } from "express";
 import createError from 'http-errors';
-import promise from "../controllers/promise";
+import asyncController from "../controllers/asyncController"
 import validate from "../middlewares/validate";
 import validateControl from "../controllers/validateControl";
 
@@ -32,12 +32,10 @@ router.post("/data", (req: Request, res: Response, next: NextFunction): void => 
         const err: any = new Error("Bad Request: Missing name field");
         err.status = 400;
         next(err);
-    } else {
-        // Process valid data
-    }
+    } 
 });
 
-router.post("/async", promise);
+router.post("/async", asyncController);
 
 router.post("/validate", validate, validateControl);
 

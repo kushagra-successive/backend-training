@@ -1,6 +1,6 @@
 import { NextFunction,Request,Response } from "express-serve-static-core";
 
-const promise= async (req:Request,res:Response,next:NextFunction)=>{
+const asyncController= async (req:Request,res:Response,next:NextFunction)=>{
   try {
     await new Promise((resolve,reject)=>{
       reject(new Error("Promise Rejected"))
@@ -11,4 +11,4 @@ const promise= async (req:Request,res:Response,next:NextFunction)=>{
   }
 
 }
-export default promise;
+export default asyncController;

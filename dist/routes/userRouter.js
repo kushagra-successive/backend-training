@@ -5,7 +5,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const http_errors_1 = __importDefault(require("http-errors"));
-const promise_1 = __importDefault(require("../controllers/promise"));
+const asyncController_1 = __importDefault(require("../controllers/asyncController"));
 const validate_1 = __importDefault(require("../middlewares/validate"));
 const validateControl_1 = __importDefault(require("../controllers/validateControl"));
 const router = express_1.default.Router();
@@ -35,10 +35,7 @@ router.post("/data", (req, res, next) => {
         err.status = 400;
         next(err);
     }
-    else {
-        // Process valid data
-    }
 });
-router.post("/async", promise_1.default);
+router.post("/async", asyncController_1.default);
 router.post("/validate", validate_1.default, validateControl_1.default);
 exports.default = router;
