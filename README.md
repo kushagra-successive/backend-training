@@ -1,43 +1,35 @@
-## Description
+# Desciption
 
-1. Create a thorough document, named errors.md, provide a detailed description of all error codes.
+1. Compose a detailed document titled "typescript.md" that covers TypeScript, including information on basic types and variables in TypeScript.
 
-2. Setup error handling middleware
+2. Setup of TypeScript
 
-   1. Setup middleware using app.use() method
+   Install TypeScript - npm install --save-dev typescript
 
-      const express = require('express');
+   Initialize TypeScript configuration - npx tsc --init
 
-      const createError = require('http-errors');
+   Install @types/express - npm install --save-dev @types/express
 
-      const app = express();
+   Update tsconfig.json
 
-   // Other middleware and routes
+   {
 
-   // Error handling middleware
+   "compilerOptions": {
 
-   app.use((req, res, next) => {
+   "target": "es6",
 
-   next(createError(404, 'Not Found'));
+   "module": "commonjs",
 
-   });
+   "outDir": "./dist",
 
-   // Additional error handling middleware (if needed)
+   "rootDir": "./src",
 
-   // Start server
+   "strict": true
 
-   const port = process.env.PORT || 3000;
+   }
 
-   app.listen(port, () => {
+   }
 
-   console.log(`Server is running on port ${port}`);
+   Compile TypeScript Code - npx tsc
 
-});
-
-3. Incorporate the error handling middleware with the previously developed API.
-
-4. Create scenarios that generate all possible error codes.
-
-5. Create an asynchronous route that intentionally throws an error.Implement error handling for asynchronous errors within the route.Send an appropriate response to the client, indicating the error.
-
-6. Create a route that expects certain parameters in the request. Implement validation checks and throw a validation error if the checks fail. Handle validation errors gracefully and send a JSON response with error details.
+3. Incorporate the TypeSCript with the previous code.
